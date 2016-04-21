@@ -1,0 +1,20 @@
+if status --is-interactive
+
+  set _jh (/usr/libexec/java_home -v 1.8)
+  set -x JAVA_HOME $_jh
+  
+  set -x MAVEN_OPTS "-Xmx1024m -Xms512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true"
+  set -x MW_HOME $HOME/Apps/wls1035_dev
+
+  set -x EDITOR "/usr/local/bin/mate -w"
+
+  set -x PATH $JAVA_HOME/bin /usr/local/sbin /usr/local/bin /usr/local/mysql/bin /opt/local/bin /opt/local/sbin $HOME/.jenv/bin . $PATH
+
+  alias ll='ls -l'
+
+  alias edit='open -t'
+
+  set -x LC_CTYPE en_US.UTF-8
+  set -x LC_ALL en_US.UTF-8
+
+end
