@@ -21,7 +21,7 @@ function fish_prompt --description 'Write out the prompt'
 
     set_color blue
     echo -n ' '
-    echo -n (java -version 2>&1 | head -n 1 | awk -F\" '{print $2}')
+    echo -n (java -version 2>&1 | head -n 1 | awk -F\" '{print $2}' | head -c3)
     
     set_color normal
     printf '%s ' (__fish_git_prompt)
