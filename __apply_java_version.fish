@@ -7,8 +7,14 @@ function __apply_java_version --description 'Applies Java version based on exist
       jdk8
     else if test "$__java_version" = "11.0"
       jdk11
-    else if test "$__java_version" = "17"
+    else if test "$__java_version" = "11"
+      jdk11
+    else if string match -q '17.*' $__java_version
       jdk17
+    else if string match -q '21.*' $__java_version
+      jdk21
+    else
+      echo "Uknown version: $__java_version"
     end
   end
 end
